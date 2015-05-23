@@ -1,0 +1,9 @@
+#3rd party
+vendor/*
+
+#testing/dev
+*.Sync*
+*.project
+*.sublime*
+todo.txt
+composer.lock

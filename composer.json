@@ -1,0 +1,26 @@
+{
+    "name": "rakelley/jhframe",
+    "description": "The JHFrame MVC Framework",
+    "keywords": ["framework", "mvc", "jhframe"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Kelley",
+            "homepage": "http://rakelley.us/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "psr/log": "1.0.*@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.2.0",
+        "mikey179/vfsStream": "^1.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "rakelley\\jhframe\\": "src/",
+            "rakelley\\jhframe\\test\\": "test/"
+        }
+    }
+}
