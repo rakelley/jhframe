@@ -7,3 +7,5 @@ vendor/*
 *.sublime*
 todo.txt
 composer.lock
+/phpunit.xml
+/docs/phpdoc/*

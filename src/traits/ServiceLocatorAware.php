@@ -1,10 +1,6 @@
 <?php
 /**
  * @package jhframe
- * 
- * All content covered under The MIT License except where included 3rd-party
- * vendor files are licensed otherwise.
- * 
  * @license http://opensource.org/licenses/MIT The MIT License
  * @author Ryan Kelley
  * @copyright 2011-2015 Jakked Hardcore Gym
@@ -13,11 +9,16 @@
 namespace rakelley\jhframe\traits;
 
 /**
- * Trait for classes which need access to the app servicelocator at runtime
+ * Trait for classes which need access to the ServiceLocator at runtime
  */
 trait ServiceLocatorAware
 {
 
+    /**
+     * Returns the IServiceLocator object associated with the current App
+     * 
+     * @return object \rakelley\jhframe\interfaces\services\IServiceLocator
+     */
     protected function getLocator()
     {
         return \App::getLocator();
