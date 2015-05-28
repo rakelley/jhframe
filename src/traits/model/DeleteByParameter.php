@@ -9,12 +9,18 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for deleting rows selected by parameter(s). Defaults to using
- * primary index.
+ * Model trait for common delete operation
  */
 trait DeleteByParameter
 {
 
+    /**
+     * Standard method for deleting rows selected by parameter(s). Defaults to
+     * using primary index.
+     * 
+     * @param  string|null $where Optional column to use in place of primary
+     * @return void
+     */
     protected function deleteByParameter($where=null)
     {
         $where = ($where) ?: $this->primary;

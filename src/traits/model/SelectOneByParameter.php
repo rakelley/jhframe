@@ -9,15 +9,16 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for fetching a single row matched by index column(s) via
- * parameters.  Defaults to using primary index.
+ * Model trait for getting single rows matching one or more columns
  */
 trait SelectOneByParameter
 {
 
     /**
-     * @param  mixed $where Optional string column name or array of same
-     * @return array
+     * Gets first row that matches a column, defaults to primary index
+     * 
+     * @param  mixed      $where Optional string column name or array of same
+     * @return array|null
      */
     protected function selectOneByParameter($where=null)
     {

@@ -16,10 +16,9 @@ interface IFormValidator
 
     /**
      * Sanitizes and validates user input according to fields and method defined
-     * by IFormView.  Should allow any raised exceptions to bubble.
+     * by a FormView.  Should allow any raised exceptions to bubble.
      *
-     * For implementation information:
-     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields
+     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields() 
      *
      * @param  object $view Object to validate input for
      * @return array        Sanitized user input

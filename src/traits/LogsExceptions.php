@@ -13,6 +13,10 @@ namespace rakelley\jhframe\traits;
  */
 trait LogsExceptions
 {
+    /**
+     * Interface for dependent service
+     * @var string
+     */
     protected $loggerInterface = '\rakelley\jhframe\interfaces\services\ILogger';
 
 

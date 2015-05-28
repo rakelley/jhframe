@@ -33,6 +33,10 @@ class ViewController implements \rakelley\jhframe\interfaces\services\IViewContr
     protected $renderable;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\IRenderable           $renderable
+     * @param \rakelley\jhframe\interfaces\services\IKeyValCache $cache
+     */
     function __construct(
         \rakelley\jhframe\interfaces\IRenderable $renderable,
         \rakelley\jhframe\interfaces\services\IKeyValCache $cache
@@ -43,7 +47,8 @@ class ViewController implements \rakelley\jhframe\interfaces\services\IViewContr
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IViewController::createView
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IViewController::createView()
      */
     public function createView($viewName, array $parameters=null,
                                $cacheable=false)

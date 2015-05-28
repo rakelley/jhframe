@@ -16,7 +16,8 @@ class SessionAbstractor implements
 {
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::getId
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::getId()
      */
     public function getId()
     {
@@ -27,8 +28,9 @@ class SessionAbstractor implements
     /**
      * This implementation only works on the subdomain it's created on, and only
      * over https.
-     * 
-     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::startSession
+     *
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::startSession()
      */
     public function startSession() {
         if ($this->getId()) {
@@ -43,7 +45,8 @@ class SessionAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::newSession
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::newSession()
      */
     public function newSession()
     {
@@ -53,7 +56,8 @@ class SessionAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::closeSession
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ISessionAbstractor::closeSession()
      */
     public function closeSession()
     {

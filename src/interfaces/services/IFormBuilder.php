@@ -12,7 +12,7 @@ namespace rakelley\jhframe\interfaces\services;
  * Interface for service which handles standard form construction for form views
  *
  * For implementation notes on $rules arrays:
- * @see \rakelley\jhframe\interfaces\view\IFormView::getFields
+ * @see \rakelley\jhframe\interfaces\view\IFormView::getFields()
  */
 interface IFormBuilder
 {

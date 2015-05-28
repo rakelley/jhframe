@@ -9,17 +9,18 @@
 namespace rakelley\jhframe\classes\resources;
 
 /**
- * Renderable Resource for storing the result of an Action or other POST-based
- * API call
+ * Renderable Resource for storing the result of an Action or other API call
  */
 class ActionResult extends \rakelley\jhframe\classes\Renderable
 {
     /**
-     * @see \rakelley\jhframe\classes\Renderable::meta
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\Renderable::$meta
      */
     protected $meta = null;
     /**
-     * @see \rakelley\jhframe\classes\Renderable::type
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\Renderable::$type
      */
     protected $type = \rakelley\jhframe\interfaces\services\IRenderer::TYPE_API;
     /**
@@ -109,7 +110,8 @@ class ActionResult extends \rakelley\jhframe\classes\Renderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::getContent
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::getContent()
      *
      * In most cases content property should be unset and default
      * success/error/message array provided
@@ -133,7 +135,8 @@ class ActionResult extends \rakelley\jhframe\classes\Renderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::setType
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::setType()
      */
     public function setType($type)
     {
@@ -145,7 +148,8 @@ class ActionResult extends \rakelley\jhframe\classes\Renderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::setMetaData
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::setMetaData()
      */
     public function setMetaData($data)
     {

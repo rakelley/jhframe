@@ -21,7 +21,8 @@ class Config implements \rakelley\jhframe\interfaces\services\IConfig
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IConfig::Reset
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IConfig::Reset()
      */
     public function Reset()
     {
@@ -30,7 +31,8 @@ class Config implements \rakelley\jhframe\interfaces\services\IConfig
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IConfig::Get
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IConfig::Get()
      */
     public function Get($group, $key=null)
     {
@@ -45,7 +47,8 @@ class Config implements \rakelley\jhframe\interfaces\services\IConfig
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IConfig::Set
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IConfig::Set()
      */
     public function Set($value, $group, $key=null)
     {
@@ -58,7 +61,8 @@ class Config implements \rakelley\jhframe\interfaces\services\IConfig
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IConfig::Merge
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IConfig::Merge()
      */
     public function Merge(array $values, $group)
     {

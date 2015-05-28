@@ -13,6 +13,8 @@ use Psr\Log\LogLevel;
 /**
  * Exception handling library to deal with logging and creating appropriate
  * output for the user.
+ * Constants are for severity of current exception, used in conjunction with
+ * logging level to determine if exception should be logged.
  */
 class ExceptionHandler implements
     \rakelley\jhframe\interfaces\services\IExceptionHandler
@@ -33,7 +35,7 @@ class ExceptionHandler implements
     protected $devEnv;
     /**
      * Instance of Exception currently being addressed
-     * @var object
+     * @var \Exception
      */
     protected $e;
     /**
@@ -63,19 +65,22 @@ class ExceptionHandler implements
     protected $resultContainer;
     /**
      * Severity of current exception
-     * @see $this::SEVERITY_*
      * @var int
      */
     protected $severity;
-    /**
-     * Constants for severity of current exception, used in conjunction with
-     * logging level to determine if exception should be logged
-     */
+    /** user-level error with code 4xx */
     const SEVERITY_USER = 100;
+    /** unanticipated error with unknown severity */
     const SEVERITY_UNKNOWN = 110;
+    /** system-level error with code 5xx */
     const SEVERITY_SYSTEM = 120;
 
 
+    /**
+     * @param \rakelley\jhframe\classes\resources\ActionResult            $resultContainer
+     * @param \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
+     * @param \rakelley\jhframe\interfaces\services\IIo                   $io
+     */
     function __construct(
         \rakelley\jhframe\classes\resources\ActionResult $resultContainer,
         \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem,
@@ -103,20 +108,15 @@ class ExceptionHandler implements
     }
 
 
-    protected function setException(\Exception $e)
-    {
-        $this->e = $e;
-
-        $this->severity = $this->getSeverityByCode($this->e->getCode());
-    }
-
-
     /**
-     * @see \rakelley\jhframe\interfaces\services\IExceptionHandler::Handle
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IExceptionHandler::Handle()
      */
     public function Handle(\Exception $e)
     {
-        $this->setException($e);
+        $this->e = $e;
+        $this->severity = $this->getSeverityByCode($this->e->getCode());
+
         $this->log();
 
         if ($this->apiCall) {
@@ -158,8 +158,8 @@ class ExceptionHandler implements
     /**
      * Determines severity of current exception by code type
      * 
-     * @param int|string $code code of current exception
-     * @return string
+     * @param  int|string $code Code of current exception
+     * @return int              Corresponding class constant
      */
     protected function getSeverityByCode($code)
     {
@@ -182,7 +182,7 @@ class ExceptionHandler implements
 
 
     /**
-     * Serve error view
+     * Serves error view
      * 
      * @return void
      */
@@ -208,7 +208,7 @@ class ExceptionHandler implements
 
 
     /**
-     * Output failure via API result container
+     * Outputs failure via API result container
      * 
      * @return void
      */

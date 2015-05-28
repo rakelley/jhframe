@@ -26,6 +26,10 @@ class GlobalExceptionHandler implements
     protected $io;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IExceptionHandler $handler
+     * @param \rakelley\jhframe\interfaces\services\IIo               $io
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IExceptionHandler $handler,
         \rakelley\jhframe\interfaces\services\IIo $io
@@ -36,7 +40,8 @@ class GlobalExceptionHandler implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IGlobalExceptionHandler::Initiate
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IGlobalExceptionHandler::Initiate()
      */
     public function Initiate(\Exception $e)
     {
@@ -52,7 +57,8 @@ class GlobalExceptionHandler implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IGlobalExceptionHandler::RegisterSelf
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IGlobalExceptionHandler::RegisterSelf()
      */
     public function registerSelf()
     {

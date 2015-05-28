@@ -9,14 +9,21 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for inserting a new row with values defined for all columns.
- * 
- * The keys of $values are assumed to at least contain the full set of columns.
- * Extraneous keys are safely ignored.
+ * Model trait for inserting rows without auto key
  */
 trait InsertAll
 {
 
+    /**
+     * Standard method for inserting a new row with values defined for all
+     * columns.
+     * The keys of $values are assumed to at least contain the full set of
+     * columns.
+     * Extraneous keys are safely ignored.
+     *
+     * @param  array $values Key/value pairs for all columns
+     * @return void
+     */
     protected function insertAll(array $values)
     {
         $this->db->newQuery('insert', $this->table,

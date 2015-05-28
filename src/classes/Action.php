@@ -27,13 +27,15 @@ abstract class Action implements \rakelley\jhframe\interfaces\action\IAction
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\action\IAction::Proceed
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\action\IAction::Proceed()
      */
     abstract public function Proceed();
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\action\IAction::getError
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\action\IAction::getError()
      */
     public function getError()
     {
@@ -42,7 +44,8 @@ abstract class Action implements \rakelley\jhframe\interfaces\action\IAction
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\action\IAction::touchesData
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\action\IAction::touchesData()
      */
     public function touchesData()
     {

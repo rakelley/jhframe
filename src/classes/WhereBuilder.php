@@ -29,7 +29,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::newWhere
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::newWhere()
      */
     public function newWhere(IDatabase $db, $operator=null)
     {
@@ -42,7 +43,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::Equals
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::Equals()
      */
     public function Equals($column, $operator=null)
     {
@@ -68,7 +70,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::In
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::In()
      */
     public function In($column, array $values)
     {
@@ -80,7 +83,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::Like
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::Like()
      */
     public function Like($column, $placeholder, $operator=null)
     {
@@ -105,7 +109,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::isNotNull
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::isNotNull()
      */
     public function isNotNull($column)
     {
@@ -116,7 +121,8 @@ class WhereBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::isNull
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::isNull()
      */
     public function isNull($column)
     {

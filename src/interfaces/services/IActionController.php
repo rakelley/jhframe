@@ -21,7 +21,7 @@ interface IActionController
      * 
      * @param  string $actionName Qualified class name of Action
      * @param  array  $parameters Optional parameters to pass to Action
-     * @return object             \rakelley\jhframe\classes\resources\ActionResult
+     * @return \rakelley\jhframe\classes\resources\ActionResult
      */
     public function executeAction($actionName, array $parameters=null);
 }

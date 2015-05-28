@@ -38,6 +38,9 @@ abstract class Model
     protected $table = '';
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IDatabase $db
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IDatabase $db
     ) {

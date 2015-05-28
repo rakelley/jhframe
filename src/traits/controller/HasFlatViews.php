@@ -23,7 +23,8 @@ trait HasFlatViews
 
 
     /**
-     * @see \rakelley\jhframe\classes\RouteController::standardView
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\RouteController::standardView()
      * @abstract
      */
     abstract protected function standardView($name, array $parameters=null,

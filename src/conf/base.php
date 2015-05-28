@@ -1,5 +1,7 @@
 <?php
 /**
+ * All configuration values
+ * 
  * @package jhframe
  * @license http://opensource.org/licenses/MIT The MIT License
  * @author Ryan Kelley

@@ -34,6 +34,10 @@ class ActionController implements
     protected $container;
 
 
+    /**
+     * @param \rakelley\jhframe\classes\resources\ActionResult   $container
+     * @param \rakelley\jhframe\interfaces\services\IKeyValCache $cache
+     */
     function __construct(
         \rakelley\jhframe\classes\resources\ActionResult $container,
         \rakelley\jhframe\interfaces\services\IKeyValCache $cache
@@ -44,7 +48,8 @@ class ActionController implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IActionController::executeAction
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IActionController::executeAction()
      */
     public function executeAction($actionName, array $parameters=null)
     {

@@ -9,19 +9,16 @@
 namespace rakelley\jhframe\interfaces\services;
 
 /**
- * Interface for custom exception handlers
+ * Interface for custom exception handlers.
+ * Constants are used by bootstrap ENV config to set logging level
  */
 interface IExceptionHandler
 {
-    /**
-     * Constants used by bootstrap environmental config to set logging level
-     *
-     * none   - no exceptions logged
-     * system - internal exceptions only, no exceptions based on user input
-     * all    - all exceptions logged
-     */
+    /** no exceptions logged */
     const LOGGING_NONE = 10;
+    /** internal exceptions only, no exceptions based on user input */
     const LOGGING_SYSTEM = 110;
+    /** all exceptions logged */
     const LOGGING_ALL = 120;
 
     
@@ -30,6 +27,7 @@ interface IExceptionHandler
      * Should render an error view to the user or render an API action failed
      * object as appropriate.
      *
+     * @param \Exception $e Exception to handle
      * @return void
      */
     public function Handle(\Exception $e);

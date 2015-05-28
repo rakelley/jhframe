@@ -29,7 +29,8 @@ class JoinBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin()
      */
     public function newJoin(IDatabase $db, $table, $type=null)
     {
@@ -42,7 +43,8 @@ class JoinBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::On
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::On()
      */
     public function On($local, $foreign)
     {
@@ -55,7 +57,8 @@ class JoinBuilder implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::Using
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::Using()
      */
     public function Using($column)
     {

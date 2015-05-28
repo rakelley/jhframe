@@ -26,6 +26,9 @@ class StatementAbstractor implements
     protected $stmnt = null;
 
 
+    /**
+     * @param \PDO $connection
+     */
     function __construct(
         \PDO $connection
     ) {
@@ -34,7 +37,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::makeStatement
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::makeStatement()
      */
     public function makeStatement($query)
     {
@@ -45,7 +49,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::returnStatement
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::returnStatement()
      */
     public function returnStatement()
     {
@@ -54,7 +59,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Bind
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Bind()
      */
     public function Bind($key, array $values)
     {
@@ -80,7 +86,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Execute
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Execute()
      */
     public function Execute(array $values=null)
     {
@@ -91,7 +98,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Fetch
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::Fetch()
      */
     public function Fetch(array $values=null)
     {
@@ -102,7 +110,8 @@ class StatementAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::FetchAll
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IStatementAbstractor::FetchAll()
      */
     public function FetchAll(array $values=null)
     {

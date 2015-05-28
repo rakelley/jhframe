@@ -9,11 +9,16 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for selecting the entire contents of a table
+ * Model trait for getting entire table
  */
 trait SelectAll
 {
 
+    /**
+     * Gets all rows in table
+     * 
+     * @return array|null
+     */
     protected function selectAll()
     {
         $result = $this->db->newQuery('select', $this->table)

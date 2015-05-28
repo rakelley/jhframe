@@ -46,6 +46,9 @@ class DiskCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
     protected $lifetime;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
     ) {
@@ -60,7 +63,8 @@ class DiskCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Read
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Read()
      */
     public function Read($key)
     {
@@ -81,7 +85,8 @@ class DiskCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Write
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Write()
      */
     public function Write($value, $key)
     {
@@ -93,7 +98,8 @@ class DiskCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Purge
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Purge()
      *
      * Currently the filter is only partially functional as keys are hashed to
      * avoid issues with special characters in file names, only exact keys will

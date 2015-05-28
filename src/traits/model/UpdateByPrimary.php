@@ -9,12 +9,19 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for updating all non-primary columns in rows selected by
- * primary index
+ * Model trait for updating rows matching primary key
  */
 trait UpdateByPrimary
 {
 
+    /**
+     * Standard method for updating all non-primary columns in rows selected by
+     * primary index
+     *
+     * @param  array $values List of values to update columns with and to match
+     *                       primary against
+     * @return void
+     */
     protected function updateByPrimary(array $values)
     {
         $columns = array_values(array_diff($this->columns,

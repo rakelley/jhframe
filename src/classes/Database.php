@@ -35,6 +35,11 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
     protected $whereBuilder;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder  $joinBuilder
+     * @param \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder $whereBuilder
+     * @param \rakelley\jhframe\interfaces\services\IStatementAbstractor  $statementService
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder $joinBuilder,
         \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder $whereBuilder,
@@ -47,7 +52,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::newQuery
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::newQuery()
      */
     public function newQuery($type, $table, array $args=null)
     {
@@ -65,7 +71,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::setQuery
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::setQuery()
      */
     public function setQuery($query)
     {
@@ -75,7 +82,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::returnQuery
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::returnQuery()
      */
     public function returnQuery()
     {
@@ -84,7 +92,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::makeStatement
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::makeStatement()
      */
     public function makeStatement()
     {
@@ -93,7 +102,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::addWhere
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::addWhere()
      */
     public function addWhere($operator=null)
     {
@@ -102,7 +112,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::addJoin
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::addJoin()
      */
     public function addJoin($table, $type=null)
     {
@@ -111,7 +122,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::addOrder
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::addOrder()
      */
     public function addOrder(array $args)
     {
@@ -128,7 +140,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::addLimit
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::addLimit()
      */
     public function addLimit($limit)
     {
@@ -139,7 +152,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::stripTicks
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::stripTicks()
      */
     public function stripTicks()
     {
@@ -150,7 +164,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::Append
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::Append()
      */
     public function Append($string)
     {
@@ -161,7 +176,8 @@ class Database implements \rakelley\jhframe\interfaces\services\IDatabase
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IDatabase::Prepend
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IDatabase::Prepend()
      */
     public function Prepend($string)
     {

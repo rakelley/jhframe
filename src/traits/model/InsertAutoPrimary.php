@@ -9,12 +9,17 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for inserting a single row in a table with an automatic
- * primary key column
+ * Model trait for insertion with an auto key
  */
 trait InsertAutoPrimary
 {
 
+    /**
+     * Inserts a single row in a table with an automatic primary key column
+     *
+     * @param  array $values Key/value pairs for all non-primary columns
+     * @return void
+     */
     protected function insertAutoPrimary(array $values)
     {
         $columns = array_values(array_diff($this->columns,

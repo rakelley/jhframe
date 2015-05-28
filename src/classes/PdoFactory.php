@@ -41,7 +41,8 @@ class PdoFactory implements \rakelley\jhframe\interfaces\IFactory
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFactory::getProduct
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFactory::getProduct()
      */
     public function getProduct()
     {

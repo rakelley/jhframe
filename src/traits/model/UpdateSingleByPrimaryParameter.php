@@ -9,13 +9,15 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for updating a single column where the primary index matches
- * a parameter
+ * Model trait for updating single columns by primary key value
  */
 trait UpdateSingleByPrimaryParameter
 {
 
     /**
+     * Standard method for updating a single column for all rows where the
+     * primary index matches a parameter
+     * 
      * @param  string $column Column name to update
      * @param  mixed  $value  Value to set $column to
      * @return void

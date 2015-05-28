@@ -26,25 +26,28 @@ interface IIo
 
     /**
      * Wrapper for header
-     * 
+     *
+     * @see http://php.net/manual/en/function.header.php
      * @param  string $header Header to send
-     * @return object         Return self for chaining
+     * @return object         Return $this for chaining
      */
     public function Header($header);
 
 
     /**
      * Wrapper for http_response_code
-     * 
+     *
+     * @see http://php.net/manual/en/function.http-response-code.php
      * @param  int    $code HTTP code to send
-     * @return object       Return self for chaining
+     * @return object       Return $this for chaining
      */
     public function httpCode($code);
 
 
     /**
      * Wrapper for echo
-     * 
+     *
+     * @see http://php.net/manual/en/function.echo.php
      * @param  string $content
      * @return void
      */
@@ -53,11 +56,12 @@ interface IIo
 
     /**
      * Wrapper for error_log
-     * 
-     * @param  string      $error       Same as error_log
-     * @param  int         $type        Same as error_log
-     * @param  string|null $destination Same as error_log
-     * @param  string|null $headers     Same as error_log
+     *
+     * @see http://php.net/manual/en/function.error-log.php
+     * @param  string      $error
+     * @param  int         $type
+     * @param  string|null $destination
+     * @param  string|null $headers
      * @return void
      */
     public function toErrorLog($error, $type=0, $destination=null,
@@ -66,8 +70,9 @@ interface IIo
 
     /**
      * Wrapper for exit
-     * 
-     * @param  string|null $message Optional exit message
+     *
+     * @see http://php.net/manual/en/function.exit.php
+     * @param  string|null $message
      * @return void
      */
     public function toExit($message=null);
@@ -75,12 +80,13 @@ interface IIo
 
     /**
      * Wrapper for mail
-     * 
-     * @param  string $to         Same as mail
-     * @param  string $subject    Same as mail
-     * @param  string $message    Same as mail
-     * @param  string $headers    Same as mail
-     * @param  string $parameters Same as mail
+     *
+     * @see http://php.net/manual/en/function.mail.php
+     * @param  string      $to
+     * @param  string      $subject
+     * @param  string      $message
+     * @param  string|null $headers
+     * @param  string|null $parameters
      * @return bool
      */
     public function toMail($to, $subject, $message, $headers=null,

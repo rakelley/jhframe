@@ -40,6 +40,7 @@ class Router implements \rakelley\jhframe\interfaces\services\IRouter
 
 
     /**
+     * {@inheritdoc}
      * @see \rakelley\jhframe\interfaces\services\IRouter->serveRequest
      */
     public function serveRequest($uri, $type)

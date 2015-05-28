@@ -38,7 +38,8 @@ class ServiceLocator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IServiceLocator::Make
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IServiceLocator::Make()
      */
     public function Make($key)
     {
@@ -58,7 +59,8 @@ class ServiceLocator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IServiceLocator::Resolve
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IServiceLocator::Resolve()
      */
     public function Resolve($key)
     {
@@ -80,7 +82,8 @@ class ServiceLocator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IServiceLocator::Override
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IServiceLocator::Override()
      */
     public function Override(array $overrides)
     {
@@ -98,7 +101,8 @@ class ServiceLocator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IServiceLocator::Reset
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IServiceLocator::Reset()
      */
     public function Reset()
     {
@@ -121,7 +125,8 @@ class ServiceLocator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IServiceLocator::getNew
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IServiceLocator::getNew()
      */
     public function getNew($existing)
     {

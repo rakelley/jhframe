@@ -33,15 +33,17 @@ abstract class View implements \rakelley\jhframe\interfaces\view\IView
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\view\IView::constructView
      * The expected implementation for children of this class is to pass the
      * constructed content to the viewContent property
+     *
+     * @see \rakelley\jhframe\interfaces\view\IView::constructView()
      */
     abstract public function constructView();
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\view\IView::returnView
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\view\IView::returnView()
      */
     public function returnView()
     {

@@ -32,6 +32,9 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
     ];
 
 
+    /**
+     * @param \Tidy $tidy
+     */
     function __construct(
         \Tidy $tidy
     ) {
@@ -40,7 +43,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Filter
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Filter()
      */
     public function Filter($input, $filters)
     {
@@ -61,7 +65,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::asList
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::asList()
      */
     public function asList($input, $args)
     {
@@ -82,7 +87,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Date
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Date()
      */
     public function Date($input, $format=null)
     {
@@ -100,7 +106,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Email
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Email()
      */
     public function Email($input)
     {
@@ -114,7 +121,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Float
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Float()
      */
     public function Float($input)
     {
@@ -126,7 +134,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::encodeHtml
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::encodeHtml()
      */
     public function encodeHtml($input)
     {
@@ -139,7 +148,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
     }
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::decodeHtml
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::decodeHtml()
      */
     public function decodeHtml($input)
     {
@@ -153,7 +163,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Int
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Int()
      */
     public function Int($input)
     {
@@ -165,7 +176,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::spaceToUnderscore
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::spaceToUnderscore()
      */
     public function spaceToUnderscore($input)
     {
@@ -178,7 +190,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::underscoreToSpace
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::underscoreToSpace()
      */
     public function underscoreToSpace($input)
     {
@@ -191,7 +204,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::plainText
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::plainText()
      */
     public function plainText($input)
     {
@@ -204,7 +218,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
     }
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::tidyText
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::tidyText()
      */
     public function tidyText($text, array $config=null)
     {
@@ -221,7 +236,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Url
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Url()
      */
     public function Url($input)
     {
@@ -234,7 +250,8 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFilter::Word
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFilter::Word()
      */
     public function Word($input, $permitted='')
     {
@@ -248,6 +265,16 @@ class Filter implements \rakelley\jhframe\interfaces\services\IFilter
     }
 
 
+    /**
+     * Applies a class method or function to a value
+     * 
+     * @param  mixed $input   Value to filter
+     * @param  string $filter Name of class method or function to use
+     * @param  mixed $arg     Optional second argument for $filter
+     * @return mixed          Filtered value or null
+     * @throws \DomainException If $filter doesn't exist as either a method of
+     *                          $this or a function
+     */
     protected function executeFilter($input, $filter, $arg=null)
     {
         if (method_exists($this, $filter)) {

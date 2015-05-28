@@ -15,6 +15,10 @@ namespace rakelley\jhframe\traits\view;
  */
 trait HasBotcheckField
 {
+    /**
+     * Interface for dependent service
+     * @var string
+     */
     protected $botcheckServiceInterface =
         '\rakelley\jhframe\interfaces\services\IBotcheck';
 

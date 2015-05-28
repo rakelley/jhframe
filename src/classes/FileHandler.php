@@ -44,6 +44,9 @@ abstract class FileHandler implements \rakelley\jhframe\interfaces\IFileHandler
     protected $validTypes = [];
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
     ) {
@@ -55,14 +58,16 @@ abstract class FileHandler implements \rakelley\jhframe\interfaces\IFileHandler
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Validate
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Validate()
      * @abstract
      */
     abstract public function Validate($file);
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Delete
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Delete()
      */
     public function Delete($key)
     {
@@ -75,7 +80,8 @@ abstract class FileHandler implements \rakelley\jhframe\interfaces\IFileHandler
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Read
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Read()
      */
     public function Read($key)
     {
@@ -92,14 +98,16 @@ abstract class FileHandler implements \rakelley\jhframe\interfaces\IFileHandler
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Write
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Write()
      * @abstract
      */
     abstract public function Write($key, $file);
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::makeRelative
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::makeRelative()
      */
     public function makeRelative($path)
     {

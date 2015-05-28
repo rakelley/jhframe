@@ -23,7 +23,8 @@ trait Reproducible
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IReproducible::getNewInstance
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IReproducible::getNewInstance()
      */
     public function getNewInstance()
     {

@@ -38,6 +38,9 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
     protected $type;
 
 
+    /**
+     * @param  \rakelley\jhframe\interfaces\services\IRenderer $renderer
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IRenderer $renderer
     ) {
@@ -46,7 +49,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::getContent
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::getContent()
      */
     public function getContent()
     {
@@ -54,7 +58,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
     }
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::setContent
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::setContent()
      */
     public function setContent($content)
     {
@@ -64,7 +69,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::getMetaData
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::getMetaData()
      */
     public function getMetaData()
     {
@@ -72,7 +78,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
     }
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::setMetaData
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::setMetaData()
      */
     public function setMetaData($data)
     {
@@ -82,7 +89,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::getType
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::getType()
      */
     public function getType()
     {
@@ -90,7 +98,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
     }
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::setType
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::setType()
      */
     public function setType($type)
     {
@@ -100,7 +109,8 @@ class Renderable implements \rakelley\jhframe\interfaces\IRenderable
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IRenderable::Render
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IRenderable::Render()
      */
     public function Render()
     {

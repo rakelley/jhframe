@@ -32,6 +32,10 @@ abstract class FormAction extends Action implements
     protected $view;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFormValidator $validator
+     * @param \rakelley\jhframe\interfaces\view\IFormView          $view
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFormValidator $validator,
         \rakelley\jhframe\interfaces\view\IFormView $view
@@ -44,7 +48,7 @@ abstract class FormAction extends Action implements
     /**
      * Default implementation of Validate
      * 
-     * @see \rakelley\jhframe\interfaces\action\IRequiresValidation::Validate
+     * @see \rakelley\jhframe\interfaces\action\IRequiresValidation::Validate()
      */
     public function Validate()
     {

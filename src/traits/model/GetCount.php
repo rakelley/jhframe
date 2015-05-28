@@ -9,11 +9,14 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard internal method for getting count of all rows in a table
+ * Model trait for counting tables
  */
 trait GetCount
 {
+
     /**
+     * Gets count of all rows in table
+     * 
      * @return int
      */
     protected function getCount()

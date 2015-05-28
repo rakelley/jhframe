@@ -13,6 +13,10 @@ namespace rakelley\jhframe\traits;
  */
 trait CreatesImageThumbnails
 {
+    /**
+     * Class for dependent service
+     * @var string
+     */
     protected $thumbnailLibrary = '\rakelley\jhframe\classes\ThumbnailCreator';
 
 

@@ -14,5 +14,11 @@ namespace rakelley\jhframe\interfaces;
 interface ITakesParameters
 {
     
+    /**
+     * Set list of parameters for a class
+     * 
+     * @param  array|null $parameters
+     * @return void
+     */
     public function setParameters(array $parameters=null);
 }

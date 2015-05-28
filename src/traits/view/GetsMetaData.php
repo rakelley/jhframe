@@ -21,6 +21,10 @@ trait GetsMetaData
      * @var string
      */
     protected $metaRoute = null;
+    /**
+     * Interface for dependent service
+     * @var string
+     */
     protected $metaDataServiceInterface =
         '\rakelley\jhframe\interfaces\repository\IMetaData';
 

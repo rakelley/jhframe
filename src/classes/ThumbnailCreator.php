@@ -135,7 +135,7 @@ class ThumbnailCreator
     /**
      * Abstraction wrapper for getimagesize
      * 
-     * @link http://php.net/manual/en/function.getimagesize.php
+     * @see http://php.net/manual/en/function.getimagesize.php
      */
     protected function getSize($path)
     {
@@ -164,7 +164,10 @@ class ThumbnailCreator
     /**
      * Abstraction wrapper for imagecreatetruecolor
      * 
-     * @link http://php.net/manual/en/function.imagecreatetruecolor.php
+     * @see http://php.net/manual/en/function.imagecreatetruecolor.php
+     * @param  int $width
+     * @param  int $height
+     * @return void
      */
     protected function createNew($width, $height)
     {
@@ -175,7 +178,7 @@ class ThumbnailCreator
     /**
      * Abstraction wrapper for imagecopyresized
      * 
-     * @link http://php.net/manual/en/function.imagecopyresized.php
+     * @see http://php.net/manual/en/function.imagecopyresized.php
      * @param  array $t Thumbnail properties
      * @param  array $o Original properties
      * @return void

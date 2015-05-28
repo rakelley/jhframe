@@ -15,6 +15,8 @@ trait GetsServerProperty
 {
 
     /**
+     * Returns $_SERVER value matching key or null
+     * 
      * @param  string $key Array key
      * @return mixed
      */

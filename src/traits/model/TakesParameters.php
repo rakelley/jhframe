@@ -9,10 +9,8 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for models needing to implement
- * \rakelley\jhframe\interfaces\ITakesParameters and reset property state when
- * parameters change.
- * Must use \rakelley\jhframe\traits\MetaProperties or implement resetProperties
+ * Model trait for models needing to accept parameters and reset stored
+ * properties on parameter changes
  */
 trait TakesParameters
 {
@@ -23,6 +21,11 @@ trait TakesParameters
     protected $parameters = [];
 
 
+    /**
+     * Setter for parameters, resets properties on parameter change
+     * 
+     * @see \rakelley\jhframe\interfaces\ITakesParameters::setParameters()
+     */
     public function setParameters(array $parameters=null)
     {
         if ($this->parameters !== $parameters) {
@@ -32,5 +35,10 @@ trait TakesParameters
     }
 
 
+    /**
+     * Reset stored properties, can be implemented via
+     * \rakelley\jhframe\traits\MetaProperties
+     * @abstract
+     */
     abstract protected function resetProperties();
 }

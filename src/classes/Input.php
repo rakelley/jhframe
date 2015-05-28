@@ -37,6 +37,10 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
     protected $values = [];
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFilter $filter
+     * @param \rakelley\jhframe\interfaces\services\IIo     $io
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFilter $filter,
         \rakelley\jhframe\interfaces\services\IIo $io
@@ -50,7 +54,8 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IInput::getList
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IInput::getList()
      */
     public function getList(array $list, $method, $optional=false)
     {
@@ -86,7 +91,8 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IInput::searchKeys
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IInput::searchKeys()
      */
     public function searchKeys($pattern, $method, array $rules=null)
     {
@@ -114,7 +120,8 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IInput::searchValues
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IInput::searchValues()
      */
     public function searchValues($pattern, $method, array $rules=null)
     {
@@ -140,11 +147,13 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
 
     /**
      * Get a value from inputtable and apply rules to it
+     * 
      * @param  array   $table    array to find value in
      * @param  string  $key      key for value
      * @param  array   $rules    rules to apply to value (if any)
      * @param  boolean $optional true if value is not required
-     * @return mixed             mixed value if found and passes rules or null if not
+     * @return mixed             mixed value if found and passes rules or null
+     *                           if not
      */
     protected function getValue(array $table, $key, array $rules, $optional)
     {
@@ -171,11 +180,11 @@ class Input implements \rakelley\jhframe\interfaces\services\IInput
     /**
      * Apply rules to and return value
      *
-     * @throws \rakelley\jhframe\classes\InputException if a rule fails
      * @param  string $key   Key for value being validated/sanitized
      * @param  mixed  $value Value to validate/sanitize
      * @param  array  $rules Rules to apply to value
      * @return mixed         Validated/sanitized value
+     * @throws \rakelley\jhframe\classes\InputException if a rule fails
      */
     protected function applyRules($key, $value, $rules)
     {

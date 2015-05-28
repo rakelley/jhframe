@@ -29,6 +29,10 @@ class FileSystemAbstractor implements
     protected $fileResource;
 
 
+    /**
+     * @param \rakelley\jhframe\classes\CurlAbstractor $curl
+     * @param \rakelley\jhframe\interfaces\IFile       $fileResource
+     */
     function __construct(
         \rakelley\jhframe\classes\CurlAbstractor $curl,
         \rakelley\jhframe\interfaces\IFile $fileResource
@@ -39,7 +43,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Exists
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Exists()
      */
     public function Exists($path)
     {
@@ -48,7 +53,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::createDirectory
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::createDirectory()
      */
     public function createDirectory($path)
     {
@@ -57,7 +63,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::createFile
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::createFile()
      */
     public function createFile($path)
     {
@@ -67,7 +74,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::containeredInclude
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::containeredInclude()
      */
     public function containeredInclude($path, array $parameters=null)
     {
@@ -81,7 +89,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileAbstractor::Include
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileAbstractor::Include()
      */
     public function unsafeInclude($path, array $parameters=null)
     {
@@ -90,7 +99,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::getFileWithPath
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::getFileWithPath()
      */
     public function getFileWithPath($path)
     {
@@ -100,7 +110,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::getRemoteFile
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::getRemoteFile()
      */
     public function getRemoteFile($uri)
     {
@@ -114,7 +125,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Glob
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Glob()
      */
     public function Glob($pattern, $flags=0)
     {
@@ -123,7 +135,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Delete
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::Delete()
      */
     public function Delete($path, $recursive=false)
     {
@@ -185,7 +198,8 @@ class FileSystemAbstractor implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::writeUploaded
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFileSystemAbstractor::writeUploaded()
      */
     public function writeUploaded($tmpName, $destination)
     {

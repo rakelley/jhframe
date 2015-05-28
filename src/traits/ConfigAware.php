@@ -14,6 +14,11 @@ namespace rakelley\jhframe\traits;
 trait ConfigAware
 {
 
+    /**
+     * Returns config storage class for current App
+     * 
+     * @return \rakelley\jhframe\interfaces\services\IConfig
+     */
     protected function getConfig()
     {
         return \App::getConfig();

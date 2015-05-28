@@ -19,10 +19,23 @@ class ArgumentValidator extends Action implements
         \rakelley\jhframe\traits\ServiceLocatorAware,
         \rakelley\jhframe\traits\TakesParameters;
 
+    /**
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\Action::$touchesData
+     */
     protected $touchesData = false;
+    /**
+     * Store for validated values
+     * @var array
+     */
     protected $validated = [];
 
 
+    /**
+     * Uses parameter arguments to validate a set of user inputs
+     *
+     * @return boolean
+     */
     public function Proceed()
     {
         try {
@@ -47,6 +60,11 @@ class ArgumentValidator extends Action implements
     }
 
 
+    /**
+     * Returns set of validated inputs
+     * 
+     * @return array
+     */
     public function getResult()
     {
         return $this->validated;

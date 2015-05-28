@@ -17,7 +17,8 @@ trait UploadHandler
 {
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Validate
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Validate()
      */
     public function Validate($file)
     {
@@ -39,13 +40,15 @@ trait UploadHandler
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Delete
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Delete()
      */
     abstract public function Delete($key);
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFileHandler::Write
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFileHandler::Write()
      */
     public function Write($key, $file)
     {
@@ -74,6 +77,7 @@ trait UploadHandler
      * Signature for method to get mime type for file
      * 
      * Can be implemented with \rakelley\jhframe\traits\GetsMimeType
+     * @abstract
      */
     abstract protected function getMimeType($file);
 }

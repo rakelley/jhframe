@@ -13,8 +13,16 @@ namespace rakelley\jhframe\traits\view;
  */
 trait MakesSubViews
 {
+    /**
+     * Interface for ViewController
+     * @var string
+     */
     protected $controllerInterface =
         '\rakelley\jhframe\interfaces\services\IViewController';
+    /**
+     * Store for generated subviews
+     * @var array|null
+     */
     protected $subViews;
 
 
@@ -41,12 +49,14 @@ trait MakesSubViews
      * is the same as the class using this trait
      * 
      * @return array
+     * @abstract
      */
     abstract protected function getSubViewList();
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\view\IHasSubViews::makeSubViews
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\view\IHasSubViews::makeSubViews()
      */
     public function makeSubViews()
     {

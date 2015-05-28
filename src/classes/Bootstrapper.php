@@ -28,7 +28,7 @@ class Bootstrapper
      * IConfig class name to pass to App constructor as override for default.
      * Optionally set by ::handleArgs
      * @var string|null
-     * @see \rakelley\jhframe\classes\App::__construct
+     * @see \rakelley\jhframe\classes\App::__construct()
      */
     protected $configClassOverride = null;
     /**
@@ -41,7 +41,7 @@ class Bootstrapper
      * default.
      * Optionally set by ::handleArgs
      * @var string|null
-     * @see \rakelley\jhframe\classes\App::__construct
+     * @see \rakelley\jhframe\classes\App::__construct()
      */
     protected $locatorClassOverride = null;
     /**
@@ -223,7 +223,9 @@ class Bootstrapper
 
     /**
      * Abstraction wrapper for app creation
-     * 
+     *
+     * @param  string     $class
+     * @param  array|null $args
      * @return object
      */
     protected function makeApp($class, $args)
@@ -246,6 +248,11 @@ class Bootstrapper
 
     /**
      * Abstraction wrapper for ini_set()
+     * 
+     * @see http://php.net/manual/en/function.ini-set.php
+     * @param  string $key
+     * @param  string $value
+     * @return void
      */
     protected function setIniValue($key, $value)
     {
@@ -254,6 +261,10 @@ class Bootstrapper
 
     /**
      * Abstraction wrapper for date_default_timezone_set();
+     *
+     * @see http://php.net/manual/en/function.date-default-timezone-set.php
+     * @param  string $timezone
+     * @return void
      */
     protected function setTimezone($timezone)
     {

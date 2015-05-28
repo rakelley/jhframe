@@ -37,6 +37,9 @@ class FlatView extends View implements
     protected $rootDir;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
     ) {
@@ -47,9 +50,8 @@ class FlatView extends View implements
 
 
     /**
-     * 'view' parameter required
-     * 
-     * @see \rakelley\jhframe\interfaces\ITakesParameters::setParameters
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\ITakesParameters::setParameters()
      * @throws \BadMethodCallException if no 'view' parameter
      * @throws \DomainException if view file not found
      */
@@ -67,7 +69,8 @@ class FlatView extends View implements
 
 
     /**
-     * @see \rakelley\jhframe\classes\View::constructView
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\View::constructView()
      */
     public function constructView()
     {
@@ -78,8 +81,9 @@ class FlatView extends View implements
     /**
      * Converts a view name to a corresponding full file path
      * 
-     * @param  string $name View name
-     * @return string       Path to view file
+     * @param  string $name      View name
+     * @param  string $namespace Namespace of view
+     * @return string            Path to view file
      * @throws \DomainException if file does not exist at expected path
      */
     protected function mapNameToFile($name, $namespace)

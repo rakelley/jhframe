@@ -39,6 +39,9 @@ class Renderer implements \rakelley\jhframe\interfaces\services\IRenderer
     protected $io;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IIo $io
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IIo $io
     ) {
@@ -49,7 +52,8 @@ class Renderer implements \rakelley\jhframe\interfaces\services\IRenderer
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IRenderer::Render
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IRenderer::Render()
      */
     public function Render(\rakelley\jhframe\interfaces\IRenderable $renderable)
     {
@@ -73,8 +77,9 @@ class Renderer implements \rakelley\jhframe\interfaces\services\IRenderer
      * @param  object $renderable Renderable to handle type for
      * @return string             Prepared content
      */
-    protected function handleType(\rakelley\jhframe\interfaces\IRenderable $renderable)
-    {
+    protected function handleType(
+        \rakelley\jhframe\interfaces\IRenderable $renderable
+    ) {
         $content = $renderable->getContent();
 
         $type = $renderable->getType();

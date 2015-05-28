@@ -9,12 +9,19 @@
 namespace rakelley\jhframe\traits\model;
 
 /**
- * Standard method for deleting rows where column in array of values.
- * Defaults to primary index.
+ * Model trait for common way of deleting rows matching a set
  */
 trait DeleteOnValues
 {
 
+    /**
+     * Standard method for deleting rows where column in array of values.
+     * Column defaults to primary index.
+     *
+     * @param  array       $values List of values to match against
+     * @param  string|null $column Column to match with $values
+     * @return void
+     */
     protected function deleteOnValues(array $values, $column=null)
     {
         //ensure indices are contiguous

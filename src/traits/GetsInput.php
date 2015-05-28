@@ -14,6 +14,10 @@ namespace rakelley\jhframe\traits;
  */
 trait GetsInput
 {
+    /**
+     * Interface for dependent service
+     * @var string
+     */
     protected $inputServiceInterface =
         '\rakelley\jhframe\interfaces\services\IInput';
 
@@ -31,7 +35,7 @@ trait GetsInput
      * if any, before calling to input service.
      * 
      * @param  array   $list     keys and rules to get,
-     *                           @see \rakelley\jhframe\interfaces\services\IInput::Get
+     *                           @see \rakelley\jhframe\interfaces\services\IInput::Get()
      * @param  string  $method   HTTP method expected
      * @param  boolean $optional true if input is accepted but not required
      * @return array             Gathered input

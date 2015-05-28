@@ -40,7 +40,8 @@ class FormValidator implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IFormValidator::Validate
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IFormValidator::Validate()
      */
     public function Validate(\rakelley\jhframe\interfaces\view\IFormView $view)
     {

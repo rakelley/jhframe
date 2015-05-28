@@ -17,11 +17,16 @@ class File implements \rakelley\jhframe\interfaces\IFile
         \rakelley\jhframe\traits\Reproducible,
         \rakelley\jhframe\traits\ServiceLocatorAware;
 
+    /**
+     * Store for defined file path
+     * @var string
+     */
     protected $path;
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::setPath
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::setPath()
      */
     public function setPath($path)
     {
@@ -31,7 +36,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::getContent
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::getContent()
      */
     public function getContent()
     {
@@ -42,7 +48,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::setContent
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::setContent()
      */
     public function setContent($content)
     {
@@ -51,7 +58,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::Append
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::Append()
      */
     public function Append($content)
     {
@@ -60,7 +68,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::Delete
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::Delete()
      */
     public function Delete()
     {
@@ -71,7 +80,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::Exists
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::Exists()
      */
     public function Exists()
     {
@@ -80,7 +90,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::getAge
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::getAge()
      */
     public function getAge()
     {
@@ -91,7 +102,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::getMedia
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::getMedia()
      */
     public function getMedia()
     {
@@ -102,7 +114,8 @@ class File implements \rakelley\jhframe\interfaces\IFile
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\IFile::getSize
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\IFile::getSize()
      */
     public function getSize()
     {

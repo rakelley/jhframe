@@ -16,7 +16,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 {
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::getInputTable
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::getInputTable()
      */
     public function getInputTable($type)
     {
@@ -50,7 +51,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::Header
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::Header()
      */
     public function Header($header)
     {
@@ -61,7 +63,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::httpCode
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::httpCode()
      */
     public function httpCode($code)
     {
@@ -72,7 +75,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::toEcho
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::toEcho()
      */
     public function toEcho($content)
     {
@@ -81,7 +85,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::toErrorLog
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::toErrorLog()
      */
     public function toErrorLog($error, $type=0, $destination=null,
                                $headers=null)
@@ -91,7 +96,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::toExit
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::toExit()
      */
     public function toExit($message=null)
     {
@@ -100,7 +106,8 @@ class Io implements \rakelley\jhframe\interfaces\services\IIo
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IIo::toMail
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IIo::toMail()
      */
     public function toMail($to, $subject, $message, $headers=null,
                            $parameters=null)

@@ -46,6 +46,9 @@ class Logger implements \rakelley\jhframe\interfaces\services\ILogger
     protected $userLog;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFileSystemAbstractor $fileSystem
     ) {
@@ -68,7 +71,8 @@ class Logger implements \rakelley\jhframe\interfaces\services\ILogger
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ILogger::exceptionToMessage
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ILogger::exceptionToMessage()
      */
     public function exceptionToMessage(\Exception $e)
     {
@@ -111,7 +115,13 @@ TEXT;
 
 
     /**
-     * @see \Psr\Log\LoggerInterface::Log
+     * Log a message
+     * 
+     * @see \Psr\Log\LoggerInterface::Log()
+     * @param  mixed  $level
+     * @param  string $message
+     * @param  array  $context
+     * @return void
      */
     public function Log($level, $message, array $context=array())
     {

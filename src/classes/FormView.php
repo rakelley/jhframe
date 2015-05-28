@@ -32,18 +32,22 @@ abstract class FormView extends View implements
      */
     protected $data = [];
     /**
-     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields
+     * Stored arguments for constructing fields
+     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields()
      * @var array
      */
     protected $fields;
     /**
-     * Form's title, if any.
-     * @see \rakelley\jhframe\interfaces\services\IFormBuilder::constructTitle
+     * Form's title, if any
+     * @see \rakelley\jhframe\interfaces\services\IFormBuilder::constructTitle()
      * @var mixed
      */
     protected $title = null;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IFormBuilder $builder [description]
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IFormBuilder $builder
     ) {
@@ -52,7 +56,8 @@ abstract class FormView extends View implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\view\IFormView::getFields()
      */
     public function getFields()
     {
@@ -61,7 +66,8 @@ abstract class FormView extends View implements
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\view\IFormView::getMethod
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\view\IFormView::getMethod()
      */
     public function getMethod()
     {
@@ -72,7 +78,7 @@ abstract class FormView extends View implements
     /**
      * Default implementation of constructView for no successMsg
      * 
-     * @see \rakelley\jhframe\classes\View::constructView
+     * @see \rakelley\jhframe\classes\View::constructView()
      */
     public function constructView()
     {

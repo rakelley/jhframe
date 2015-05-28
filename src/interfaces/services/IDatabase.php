@@ -58,7 +58,7 @@ interface IDatabase
      * Begins the creation of a where statement to add to the query
      * 
      * @param  string $operator
-     *     @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::newWhere
+     *     @see \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder::newWhere()
      * @return object           \rakelley\jhframe\interfaces\services\IDatabaseWhereBuilder
      */
     public function addWhere($operator=null);
@@ -68,9 +68,9 @@ interface IDatabase
      * Begins the creation of a join statement to add to the query
      * 
      * @param  string $table
-     *     @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin
+     *     @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin()
      * @param  string $type
-     *     @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin
+     *     @see \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder::newJoin()
      * @return object           \rakelley\jhframe\interfaces\services\IDatabaseJoinBuilder
      */
     public function addJoin($table, $type=null);

@@ -64,6 +64,10 @@ abstract class RouteController
     protected $viewController;
 
 
+    /**
+     * @param \rakelley\jhframe\interfaces\services\IActionController $actionController
+     * @param \rakelley\jhframe\interfaces\services\IViewController   $viewController
+     */
     function __construct(
         \rakelley\jhframe\interfaces\services\IActionController $actionController,
         \rakelley\jhframe\interfaces\services\IViewController $viewController

@@ -13,20 +13,26 @@ namespace rakelley\jhframe\classes;
  */
 class Crypto implements \rakelley\jhframe\interfaces\services\ICrypto
 {
-    private $hashStrength = \PASSWORD_DEFAULT;
+    /**
+     * Value used for hashing algorithm argument
+     * @var mixed
+     */
+    protected $hashMethod = \PASSWORD_DEFAULT;
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ICrypto::hashString
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ICrypto::hashString()
      */
     public function hashString($string)
     {
-        return password_hash($string, $this->hashStrength);
+        return password_hash($string, $this->hashMethod);
     }
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ICrypto::compareHash
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ICrypto::compareHash()
      */
     public function compareHash($input, $existing)
     {
@@ -35,16 +41,18 @@ class Crypto implements \rakelley\jhframe\interfaces\services\ICrypto
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ICrypto::hashNeedsUpdating
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ICrypto::hashNeedsUpdating()
      */
     public function hashNeedsUpdating($hash)
     {
-        return password_needs_rehash($hash, $this->hashStrength);
+        return password_needs_rehash($hash, $this->hashMethod);
     }
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\ICrypto::createRandomString
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\ICrypto::createRandomString()
      */
     public function createRandomString($length=64)
     {

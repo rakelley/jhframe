@@ -17,7 +17,7 @@ trait ServiceLocatorAware
     /**
      * Returns the IServiceLocator object associated with the current App
      * 
-     * @return object \rakelley\jhframe\interfaces\services\IServiceLocator
+     * @return \rakelley\jhframe\interfaces\services\IServiceLocator
      */
     protected function getLocator()
     {

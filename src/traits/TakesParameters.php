@@ -13,9 +13,18 @@ namespace rakelley\jhframe\traits;
  */
 trait TakesParameters
 {
+    /**
+     * Store for set parameters
+     * @var array
+     */
     protected $parameters = [];
 
 
+    /**
+     * Setter for parameters
+     * 
+     * @see \rakelley\jhframe\interfaces\ITakesParameters::setParameters()
+     */
     public function setParameters(array $parameters=null)
     {
         $this->parameters = $parameters;

@@ -16,7 +16,8 @@ class NullCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 {
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Read
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Read()
      */
     public function Read($key)
     {
@@ -25,7 +26,8 @@ class NullCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Write
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Write()
      */
     public function Write($value, $key)
     {
@@ -34,7 +36,8 @@ class NullCache implements \rakelley\jhframe\interfaces\services\IKeyValCache
 
 
     /**
-     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Purge
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\interfaces\services\IKeyValCache::Purge()
      */
     public function Purge($filter=null)
     {
