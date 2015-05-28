@@ -28,8 +28,8 @@ and attempted to implement better design patterns.
 
 JHFrame is fully usable, fast, and has a reasonably comprehensive feature-set,
 with some caveats. Public publishing is primarily intended to serve as a code
-example for me, but please feel free to use, experiment, and borrow from it for
-your own projects, and contribute if you find it useful.
+example for me in job-hunting, but please feel free to use, experiment, and
+borrow from it for your own projects, and contribute if you find it useful.
 
 
 ## Caveats
@@ -45,6 +45,9 @@ primarily came as an academic/personal exercise (and of course for the benefits
 of decoupling core logic from app-specific logic), some parts may
 unintentionally remain insufficiently abstract for a true general-use framework.
 
+That aside, Laravel and Lumen are extremely nice frameworks probably much more
+worth your time for a new project!
+
 
 ## Installation and Use
 JHFrame is available through [Composer](https://getcomposer.org/)
@@ -52,7 +55,7 @@ JHFrame is available through [Composer](https://getcomposer.org/)
 Add `"rakelley/jhframe": "^1.0.0"` to the `require` section of your project's
 `composer.json`
 
-For usage, please see the documentation and example application
+For usage, please see the docs markdown files and run phpdoc against `/src`.
 
 
 ## Testing
