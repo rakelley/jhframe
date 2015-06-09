@@ -54,7 +54,11 @@ trait UploadHandler
     {
         $this->Delete($key);
 
-        $path = $this->directory . $key . $this->getExtension($file);
+        $path = $this->directory . $key;
+        $ext = $this->getExtension($file);
+        if (!strpos($path, $ext)) {
+            $path .= $ext;
+        }
         $this->fileSystem->writeUploaded($file['tmp_name'], $path);
     }
 
